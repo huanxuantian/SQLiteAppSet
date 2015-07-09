@@ -1,0 +1,20 @@
+# 
+# filter .gitignore file
+#
+
+#file type not to commit
+*.obj
+
+*.sdf
+
+*.ipch
+
+*.tlog
+
+log.txt
+
+#directory not to include
+
+#/win32/SQLiteMAN1-UTF8DB/Debug
+
+#/win32/SQLiteMAN1-UTF8DB/SQLiteMAN1/Debug

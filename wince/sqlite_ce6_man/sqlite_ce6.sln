@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqlite_ce6", "sqlite_ce6\sqlite_ce6.vcproj", "{2349089B-0EC8-4F67-B3E3-9C8B010A558E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|CE6_EMU_CHS (ARMV4I) = Debug|CE6_EMU_CHS (ARMV4I)
+		Debug|My Device Emulator (ARMV4I) = Debug|My Device Emulator (ARMV4I)
+		Debug|Pocket PC 2003 (ARMV4) = Debug|Pocket PC 2003 (ARMV4)
+		Debug|Smartphone 2003 (ARMV4) = Debug|Smartphone 2003 (ARMV4)
+		Debug|SMDK2450 (ARMV4I) = Debug|SMDK2450 (ARMV4I)
+		Release|CE6_EMU_CHS (ARMV4I) = Release|CE6_EMU_CHS (ARMV4I)
+		Release|My Device Emulator (ARMV4I) = Release|My Device Emulator (ARMV4I)
+		Release|Pocket PC 2003 (ARMV4) = Release|Pocket PC 2003 (ARMV4)
+		Release|Smartphone 2003 (ARMV4) = Release|Smartphone 2003 (ARMV4)
+		Release|SMDK2450 (ARMV4I) = Release|SMDK2450 (ARMV4I)
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|CE6_EMU_CHS (ARMV4I).ActiveCfg = Debug|CE6_EMU_CHS (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|CE6_EMU_CHS (ARMV4I).Build.0 = Debug|CE6_EMU_CHS (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|CE6_EMU_CHS (ARMV4I).Deploy.0 = Debug|CE6_EMU_CHS (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|My Device Emulator (ARMV4I).ActiveCfg = Debug|My Device Emulator (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|My Device Emulator (ARMV4I).Build.0 = Debug|My Device Emulator (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|My Device Emulator (ARMV4I).Deploy.0 = Debug|My Device Emulator (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|Pocket PC 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|Pocket PC 2003 (ARMV4).Build.0 = Debug|Pocket PC 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|Pocket PC 2003 (ARMV4).Deploy.0 = Debug|Pocket PC 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|Smartphone 2003 (ARMV4).ActiveCfg = Debug|Smartphone 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|Smartphone 2003 (ARMV4).Build.0 = Debug|Smartphone 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|Smartphone 2003 (ARMV4).Deploy.0 = Debug|Smartphone 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|SMDK2450 (ARMV4I).ActiveCfg = Debug|SMDK2450 (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|SMDK2450 (ARMV4I).Build.0 = Debug|SMDK2450 (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Debug|SMDK2450 (ARMV4I).Deploy.0 = Debug|SMDK2450 (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|CE6_EMU_CHS (ARMV4I).ActiveCfg = Release|CE6_EMU_CHS (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|CE6_EMU_CHS (ARMV4I).Build.0 = Release|CE6_EMU_CHS (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|CE6_EMU_CHS (ARMV4I).Deploy.0 = Release|CE6_EMU_CHS (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|My Device Emulator (ARMV4I).ActiveCfg = Release|My Device Emulator (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|My Device Emulator (ARMV4I).Build.0 = Release|My Device Emulator (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|My Device Emulator (ARMV4I).Deploy.0 = Release|My Device Emulator (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|Pocket PC 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|Pocket PC 2003 (ARMV4).Build.0 = Release|Pocket PC 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|Pocket PC 2003 (ARMV4).Deploy.0 = Release|Pocket PC 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|Smartphone 2003 (ARMV4).ActiveCfg = Release|Smartphone 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|Smartphone 2003 (ARMV4).Build.0 = Release|Smartphone 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|Smartphone 2003 (ARMV4).Deploy.0 = Release|Smartphone 2003 (ARMV4)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|SMDK2450 (ARMV4I).ActiveCfg = Release|SMDK2450 (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|SMDK2450 (ARMV4I).Build.0 = Release|SMDK2450 (ARMV4I)
+		{2349089B-0EC8-4F67-B3E3-9C8B010A558E}.Release|SMDK2450 (ARMV4I).Deploy.0 = Release|SMDK2450 (ARMV4I)
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

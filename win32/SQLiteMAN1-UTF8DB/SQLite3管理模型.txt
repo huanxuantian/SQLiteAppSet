@@ -1,0 +1,146 @@
+数据库管理
+CSQLite3Manager类设计
+目录：tool
+引用：
+../tool.h
+../sqlite3/sqlite3.h
+-----------
+主要任务：
+管理数据库，转换数据库数据
+返回查询结构体
+实现函数：
+初始化数据库（第一次创建数据库）
+数据库自检（表结构分析）
+数据库查询（键值查询）
+数据库插入（插入键）
+数据库表单生成（数据表统计）
+数据库异常处理（日志）
+
+数据表结构如下：
+
+app.db
+    table:
+      [role:ID,NAME,COMMENT]//数据库角色管理
+      [manager:ID,NAME,BUILDTIME,VERSION,COMMENT]//管理器版本
+      [assets:ID,TYPE,NAME,PATH,SIZE,CREATETIME,MODIFYTIME,VERSION,COMMENT]//资源数据
+      [app:ID,TYPE,NAME,PATH,PARENT,AUTHOR,VERSION,COMMENT]//应用数据
+      [user:ID,NAME,ROLE,COMMENT]//数据库用户
+      [data:ID,TYPE,DATALEN，DATA,MANSGER,USER,VERSION,COMMENT]//数据结构
+数据在data中以二进制形式存储，读出和写入时按照结构解析和转换。
+
+上述六个表为主要的数据模型，其格式分别如下
+ID为自增长的int类型，NAME为字符型char[64],SIZE为int型
+其他均为字符型，长度256。
+
+创建数据表的SQL语句如下;
+[SQL1]
+CREATE TABLE `role` (
+	`ID`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`NAME`	TEXT,
+	`COMMENT`	TEXT
+);
+INSERT INTO `role`
+    (`ID`,`NAME`,`COMMENT`) 
+    VALUES (NULL,'admin','admin');
+CREATE TABLE `manager` (
+	`ID`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`NAME`	TEXT,
+	`BUILDTIME`	TEXT,
+	`VERSION`	INTEGER,
+	`COMMENT`	TEXT
+);
+INSERT INTO `manager`
+    (`ID`,`NAME`,`BUILDTIME`,`VERSION`,`COMMENT`) 
+    VALUES (NULL,'man','2014-04-06 20:20',CAST(64 AS INTEGER),'default manager');
+
+
+
+CREATE TABLE `assets` (
+	`ID`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`TYPE`		TEXT,
+	`NAME`	TEXT,
+	`PATH`		TEXT,
+	`SIZE`		INTEGER,
+	`CREATETIME`	TEXT,
+	`MODIFYTIME`	TEXT,
+	`VERSION`	INTEGER,
+	`COMMENT`	TEXT
+);
+INSERT INTO `assets`
+    (`ID`,`TYPE`,`NAME`,`PATH`,`SIZE`,`CREATETIME`,`MODIFYTIME`,`VERSION`,`COMMENT`) 
+    VALUES (NULL,'PUBLIC','MAINDLALOG','./',CAST(1200000 AS INTEGER),'2014-04-06 20:20','2014-04-06 20:20',CAST(64 AS INTEGER),'default assets');
+
+CREATE TABLE `app` (
+	`ID`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`TYPE`		TEXT,
+	`NAME`	TEXT,
+	`PATH`		TEXT,
+	`PARENT`	TEXT,
+	`AUTHOR`	TEXT,
+	`VERSION`	INTEGER,
+	`COMMENT`	TEXT
+);
+INSERT INTO `app`
+    (`ID`,`TYPE`,`NAME`,`PATH`,`PARENT`,`AUTHOR`,`VERSION`,`COMMENT`) 
+    VALUES (NULL,'PUBLIC','MAINAPP','./app.exe','APP','huanxuantian',CAST(64 AS INTEGER),'default app');
+
+CREATE TABLE `user` (
+	`ID`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`NAME`	TEXT,
+	`ROLE`		TEXT,
+	`COMMENT`	TEXT
+);
+INSERT INTO `user`
+    (`ID`,`NAME`,`ROLE`,`COMMENT`) 
+    VALUES (NULL,'admin','admin','admin user');
+
+CREATE TABLE `data` (
+	`ID`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`TYPE`		TEXT,
+	`DATALEN`	INTEGER,
+	`DATA`	BLOB,
+	`MANSGER`	TEXT,
+	`USER`		TEXT,
+	`VERSION`	INTEGER,
+	`COMMENT`	TEXT
+);
+INSERT INTO `data`
+    (`ID`,`TYPE`,`DATALEN`,`DATA`,`MANSGER`,`USER`,`VERSION`,`COMMENT`) 
+    VALUES (NULL,'OPEN',CAST(120 AS INTEGER),
+    CAST('查询数据库管理角色' AS BLOB),
+    'man','admin',CAST(64 AS INTEGER),'admin user');
+
+
+
+规定查询的方法类型
+    查询数据库管理角色[管理]
+    查询数据库管理器[管理]
+    查询资源的库存，更新数据库资源库存资料[应用]
+    查询应用的库存，更新数据库应用库存资料[应用]
+    查询用户信息（验证）[应用]
+    查询数据库存，更新数据库存（数据方法）[应用扩展]
+
+其他
+各类查询对应的SQL语句：
+[SQL2]role
+    SELECT * FROM role
+[SQL3]manager
+    SELECT * FROM manager
+[SQL4]assets
+    SELECT * FROM assets
+[SQL5]app
+    SELECT * FROM app
+[SQL6]user
+    SELECT * FROM user
+[SQL7]data
+    SELECT * FROM data
+
+高级查询：
+1：交叉查询
+    SELECT user.`ID`,user.`NAME`,role.`COMMENT` FROM user,role WHERE user.`ROLE` = role.`NAME`; 
+2，条件查询&过滤[数值，字符]
+    SELECT user.`ID`,user.`NAME`,app.`NAME`,app.`VERSION` FROM user,app WHERE app.`AUTHOR` = user.`NAME` AND app.`VERSION` < CAST(67 AS INTEGER);
+
+    SELECT user.`ID`,user.`NAME`,app.`NAME`,app.`VERSION` FROM user,app WHERE app.`AUTHOR` = user.`NAME` AND app.`AUTHOR` LIKE 'admin';
+
+3,创建表查询（查询结果报告记录）
