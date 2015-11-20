@@ -30,8 +30,9 @@ CDialgSQLite_SQL::~CDialgSQLite_SQL()
 void CDialgSQLite_SQL::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	DDX_Control(pDX,IDC_SQL_INPUT,m_sql_input);
-	DDX_Control(pDX,IDC_RESAULT_LOGER,m_sql_resault);
+	DDX_Control(pDX, IDC_SQL_INPUT,m_sql_input);
+	DDX_Control(pDX, IDC_RESAULT_LOGER,m_sql_resault);
+	DDX_Control(pDX, IDC_DBNAME_VIEW,m_sql_dbname_view);
 	DDX_Control(pDX, IDOK, m_btn_ok);
 	DDX_Control(pDX, IDCANCEL, m_btn_cancel);
 }
@@ -43,6 +44,8 @@ BEGIN_MESSAGE_MAP(CDialgSQLite_SQL, CDialog)
 	ON_EN_CHANGE(IDC_SQL_INPUT, &CDialgSQLite_SQL::OnEnChangeSqlInput)
 	ON_EN_CHANGE(IDC_RESAULT_LOGER, &CDialgSQLite_SQL::OnEnChangeResaultLoger)
 	ON_BN_CLICKED(IDC_SQL_LOAD, &CDialgSQLite_SQL::OnBnClickedSqlLoad)
+	ON_BN_CLICKED(IDC_SQL_DBNAME, &CDialgSQLite_SQL::OnBnClickedSqlDbname)
+	ON_BN_CLICKED(IDC_CLEAR_LOGER, &CDialgSQLite_SQL::OnBnClickedClearLoger)
 END_MESSAGE_MAP()
 
 
@@ -52,6 +55,7 @@ BOOL CDialgSQLite_SQL::OnInitDialog()
 		//初始化处理
 		m_sql_input.Clear();
 		m_sql_resault.Clear();
+		m_sql_dbname_view.Clear();
 		//m_sql_input.ModifyStyle(WS_HSCROLL|ES_AUTOHSCROLL|ES_MULTILINE|ES_WANTRETURN, 0);
 		//m_sql_resault.ModifyStyle(WS_HSCROLL|ES_AUTOHSCROLL|ES_MULTILINE|ES_WANTRETURN, 0);
 		return TRUE;
@@ -84,7 +88,16 @@ void CDialgSQLite_SQL::OnBnClickedOk()
 	CString   str=AfxGetApp()->m_pszExeName;   
 	path=path.Left(path.GetLength()-str.GetLength()-4); 
 	CString tmp_dbname=ReadstrFromInI(_T("SQLITE"),_T("SQL"),_T("数据库.db"));
-	path+=tmp_dbname;
+	//添加自定义数据库，可以用户输入数据库文件名
+	if(main_dbname.IsEmpty())
+	{
+		main_dbname=tmp_dbname;
+		path+=main_dbname;
+	}
+	else
+	{
+		path = main_dbname;
+	}
 	wchar_t pw_url[256];
 	char p_url[256];
 	CString is1;
@@ -239,5 +252,34 @@ void CDialgSQLite_SQL::OnEnChangeResaultLoger()
 void CDialgSQLite_SQL::OnBnClickedSqlLoad()
 {
 	// TODO: 在此添加控件通知处理程序代码
+
+}
+
+
+void CDialgSQLite_SQL::OnBnClickedSqlDbname()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	CString m_strFilePath,m_strFileName,lpszFileName;
+	CFileDialog sql_dbselect(TRUE,L"db",NULL,OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,L"sqlite db Files(*.db)|*.db||",NULL);
+
+	if(sql_dbselect.DoModal() == IDOK)
+	{
+		m_strFilePath = sql_dbselect.GetPathName();  
+		//m_strFileName = dlg.GetFileName();  
+		m_strFileName = sql_dbselect.GetFileTitle();  
+		main_dbname = m_strFilePath;
+		m_sql_dbname_view.Clear();
+		m_sql_dbname_view.SetWindowText(main_dbname);
+	}
+
+}
+
+
+void CDialgSQLite_SQL::OnBnClickedClearLoger()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	m_sql_resault.Clear();
+	m_sql_loger.Empty();
+	m_sql_resault.SetWindowText(L"");
 
 }

@@ -1,0 +1,56 @@
+﻿Build started 2015/11/20 18:18:27.
+     1>Project "D:\eclipse\github\SQLiteAppSet\win32\SQLiteTOOL-UTF8DB\SQLiteTOOL-UTF8DB\SQLiteMAN1\SQLiteMAN1.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Release\SQLiteMAN1.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\SQLiteMAN1.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt DialgSQLite_SQL.cpp
+         DialgSQLite_SQL.cpp
+     1>DialgSQLite_SQL.cpp(112): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(116): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(124): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(133): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(135): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(138): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(142): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(171): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(186): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(189): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(193): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>DialgSQLite_SQL.cpp(201): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\eclipse\github\SQLiteAppSet\win32\SQLiteTOOL-UTF8DB\SQLiteTOOL-UTF8DB\Release\SQLiteMAN1.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /ManifestFile:"Release\SQLiteMAN1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\eclipse\github\SQLiteAppSet\win32\SQLiteTOOL-UTF8DB\SQLiteTOOL-UTF8DB\Release\SQLiteMAN1.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\eclipse\github\SQLiteAppSet\win32\SQLiteTOOL-UTF8DB\SQLiteTOOL-UTF8DB\Release\SQLiteMAN1.lib" /MACHINE:X86 Release\SQLiteMAN1.res
+         Release\DialgSQLite_SQL.obj
+         Release\Profile.obj
+         Release\SQLiteMAN1.obj
+         Release\SQLiteMAN1Dlg.obj
+         Release\stdafx.obj
+         Release\tool.obj
+         Release\SQLite3Manager.obj
+         正在生成代码
+         已完成代码的生成
+         SQLiteMAN1.vcxproj -> D:\eclipse\github\SQLiteAppSet\win32\SQLiteTOOL-UTF8DB\SQLiteTOOL-UTF8DB\Release\SQLiteMAN1.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\eclipse\github\SQLiteAppSet\win32\SQLiteTOOL-UTF8DB\SQLiteTOOL-UTF8DB\Release\SQLiteMAN1.exe;#1" /manifest Release\SQLiteMAN1.exe.intermediate.manifest "C:\Program Files\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       FinalizeBuildStatus:
+         Deleting file "Release\SQLiteMAN1.unsuccessfulbuild".
+         Touching "Release\SQLiteMAN1.lastbuildstate".
+     1>Done Building Project "D:\eclipse\github\SQLiteAppSet\win32\SQLiteTOOL-UTF8DB\SQLiteTOOL-UTF8DB\SQLiteMAN1\SQLiteMAN1.vcxproj" (build target(s)).
+
+生成成功。
+
+Time Elapsed 00:00:02.59

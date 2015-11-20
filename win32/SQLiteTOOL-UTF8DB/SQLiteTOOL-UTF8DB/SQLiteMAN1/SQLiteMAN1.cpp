@@ -82,9 +82,9 @@ BOOL CSQLiteMAN1App::InitInstance()
 	// 例如修改为公司或组织名
 	//SetRegistryKey(_T("应用程序向导生成的本地应用程序"));
 
-	//CSQLiteMAN1Dlg dlg;
-	//m_pMainWnd = &dlg;
-	//g_pman =&dlg;
+	CSQLiteMAN1Dlg dlg1;
+	m_pMainWnd = &dlg1;
+	g_pman =&dlg1;
 
 	CDialgSQLite_SQL dlg;
 

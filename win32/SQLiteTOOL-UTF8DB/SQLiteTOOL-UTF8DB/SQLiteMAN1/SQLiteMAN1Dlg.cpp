@@ -348,6 +348,9 @@ void CSQLiteMAN1Dlg::OnBnClickedKeyTest()
 	d_disp += tmp1_dbname;
 	d_disp +="\n";
 
+	sprintf(logmsg, "\nDB:%s",tmp1_dbname);
+	SaveLog_L(logmsg);
+
 	if (!pSQLite->OpenConnection(tmp1_dbname, path))
 	{
 		
@@ -455,6 +458,10 @@ void CSQLiteMAN1Dlg::OnBnClickedKeyTest()
 		pSQLite->Excute("insert into test (seq,name) values (1,'SQLLiteDBtest');");
 
 	pSQLite->CommitTransection();
+
+	sprintf(logmsg,"Heavey Data had done please check file: %s",tmp1_dbname);
+	SaveLog_L(logmsg);
+	g_pman->showlog();
 
 	delete pSQLite;
 
