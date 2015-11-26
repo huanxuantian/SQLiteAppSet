@@ -56,16 +56,16 @@ UINT32 ReadIntFromInI(const CString strSection, const CString strEntry,const int
 
 
 
-void SaveLog(char *buf,UINT16 len)
+void SaveLog(char *buf, UINT16 len)
 {
-	char  path[64] = {0};
+	char  path[64] = { 0 };
 	FILE* fp = NULL;
 
-	CString   log_path=AfxGetApp()->m_pszHelpFilePath;   
-	CString   log_str=AfxGetApp()->m_pszExeName;   
-	log_path=log_path.Left(log_path.GetLength()-log_str.GetLength()-4);
+	CString   log_path = AfxGetApp()->m_pszHelpFilePath;
+	CString   log_str = AfxGetApp()->m_pszExeName;
+	log_path = log_path.Left(log_path.GetLength() - log_str.GetLength() - 4);
 	log_path += (CString)THIS_LOGFILE;
-	char logfile[256];
+	char logfile[256] = {0};
 	WideCharToMultiByte( CP_ACP, 0 ,log_path, -1, logfile,256,NULL,NULL);
 	//memcpy(logfile,log_path,256);
 
